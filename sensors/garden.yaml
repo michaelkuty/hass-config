@@ -1,0 +1,8 @@
+
+- platform: dht
+  sensor: DHT11
+  pin: 23
+  name: Garden
+  monitored_conditions:
+    - temperature
+    - humidity

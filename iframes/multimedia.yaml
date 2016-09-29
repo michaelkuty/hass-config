@@ -1,0 +1,8 @@
+audio:
+  title: Plex
+  icon: mdi:music-box-outline
+  url: http://media.craftama.eu/web
+disk:
+  title: Personal Cloud
+  icon: mdi:music-box-outline
+  url: http://10.0.0.6

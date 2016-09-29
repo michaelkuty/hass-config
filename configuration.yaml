@@ -1,0 +1,60 @@
+
+homeassistant:
+    # Name of the location where Home Assistant is running
+    name: !secret HA_NAME
+    # C for Celcius, F for Fahrenheit
+    unit_system: metric
+    # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    time_zone: Europe/Prague
+
+    customize: !include_dir_merge_named customizations
+
+# Enables the frontend
+frontend:
+
+# Checks for available updates
+updater:
+
+# View all events in a logbook
+logbook:
+
+# Allows you to issue voice commands from the frontend
+# conversation:
+
+history:
+
+http:
+  api_password: !secret HA_PASSWORD
+
+# Includes
+
+panel_iframe: !include_dir_merge_named iframes
+
+device_tracker: !include_dir_merge_list device_trackers
+
+media_player: !include_dir_merge_list media_players
+
+switch: !include_dir_merge_list switches
+
+sensor: !include_dir_merge_list sensors
+
+camera: !include_dir_merge_list cameras
+
+binary_sensor: !include_dir_merge_list binary_sensors
+
+group: !include_dir_merge_named groups
+
+# script: !include_dir_named scripts
+
+automation: !include_dir_merge_list automation
+
+# notify: !include_dir_list notify
+
+input_select: !include_dir_merge_named input_selects
+
+input_slider: !include_dir_merge_named input_sliders
+
+shell_command: !include_dir_merge_named shell_commands
+
+logger: !include logger.yaml
+

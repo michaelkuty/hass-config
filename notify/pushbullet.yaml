@@ -1,0 +1,8 @@
+- platform: group
+  name: all
+  services:
+  - service: html5
+  - service: pushbullet
+- platform: pushbullet
+  name: pushbullet
+  api_key: !env_var PUSHBULLET_API_KEY

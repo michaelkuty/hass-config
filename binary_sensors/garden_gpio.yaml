@@ -1,0 +1,7 @@
+
+- platform: rpi_gpio
+  ports:
+    24: Garden Soil Humidity
+    21: Garden Light
+  pull_mode: "DOWN"
+  invert_logic: true

@@ -1,0 +1,6 @@
+lamp_on: sispmctl -d 0 -o 2
+lamp_off: sispmctl -d 0 -f 2
+fan_on: sispmctl -d 0 -o 4
+fan_off: sispmctl -d 0 -f 4
+pump_on: sispmctl -d 0 -o 3
+pump_off: sispmctl -d 0 -f 3

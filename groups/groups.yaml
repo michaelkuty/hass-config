@@ -1,0 +1,35 @@
+# default_view:
+#   view: yes
+#   entities:
+#     - media_player.kodi
+living_room:
+  name: Living Room
+  view: yes
+  entities:
+    - media_player.kodi
+
+bedroom:
+  name: Bedroom
+  view: yes
+  entities:
+    - media_player.kodi_2
+system:
+  name: System
+  view: yes
+  entities:
+    - group.system_panel
+    - group.information
+    - group.system_info
+    - group.network_speed
+information:
+  - sensor.time
+
+system info:
+- sensor.ram_use
+- sensor.disk_use_
+- sensor.cpu_use
+
+network speed:
+- sensor.speedtest_ping
+- sensor.speedtest_download
+- sensor.speedtest_upload

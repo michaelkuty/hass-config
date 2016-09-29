@@ -1,0 +1,12 @@
+
+- platform: kodi
+  host: http://10.0.0.7
+  port: 8080
+  name: Kodi
+  turn_off_action: shutdown
+
+- platform: kodi
+  host: http://10.0.0.16
+  port: 8080
+  name: Kodi
+  turn_off_action: shutdown

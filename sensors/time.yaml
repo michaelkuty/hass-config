@@ -1,0 +1,12 @@
+- platform: time_date
+  display_options:
+    - 'time'
+
+- platform: template
+  sensors:
+    time_lamp_on:
+        friendly_name: Lamp time ON
+        value_template: "{% if states.input_slider.time_lamp_on_hour.state | int < 10 %}0{% endif %}{{ states.input_slider.time_lamp_on_hour.state | int }}:{% if states.input_slider.time_lamp_on_minute.state | int < 10 %}0{% endif %}{{ states.input_slider.time_lamp_on_minute.state | int }}"
+    time_lamp_off:
+        friendly_name: Lamp time OFF
+        value_template: "{% if states.input_slider.time_lamp_off_hour.state | int < 10 %}0{% endif %}{{ states.input_slider.time_lamp_off_hour.state | int }}:{% if states.input_slider.time_lamp_off_minute.state | int < 10 %}0{% endif %}{{ states.input_slider.time_lamp_off_minute.state | int }}"

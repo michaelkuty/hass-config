@@ -1,0 +1,35 @@
+garden_pump_interval:
+  name: Pump interval (s)
+  initial: 30
+  min: 10
+  max: 1000
+  step: 5
+  icon: mdi:fan
+time_lamp_on_hour:
+  name: Lamp ON(hour)
+  initial: 6
+  min: 0
+  max: 23
+  step: 1
+  icon: mdi:clock
+time_lamp_on_minute:
+  name: Lamp ON(min)
+  initial: 0
+  min: 0
+  max: 59
+  step: 1
+  icon: mdi:clock
+time_lamp_off_hour:
+  name: Lamp OFF(hour)
+  initial: 22
+  min: 0
+  max: 23
+  step: 1
+  icon: mdi:clock
+time_lamp_off_minute:
+  name: Lamp OFF(min)
+  initial: 0
+  min: 0
+  max: 59
+  step: 1
+  icon: mdi:clock

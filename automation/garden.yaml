@@ -1,0 +1,95 @@
+
+# LIGHT
+
+- alias: garden on
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_on.state }}'
+  action:
+    service: switch.turn_on
+    entity_id: switch.light
+
+- alias: check garden light on
+  trigger:
+    platform: time
+    minutes: "/2"
+  action:
+    service: 'switch.turn_on'
+    entity_id: 'switch.light'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light
+        state: 'off'
+      - condition: time
+        after: '06:00:00'
+        before: '22:00:00'
+
+- alias: garden off
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_on.state }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.light
+- alias: check garden light off
+  trigger:
+    platform: time
+    minutes: "/2"
+  action:
+    service: 'switch.turn_off'
+    entity_id: 'switch.light'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light
+        state: 'on'
+      - condition: time
+        after: '22:00:00'
+        before: '06:00:00'
+
+# PUMP
+
+- alias: garden pump off
+  trigger:
+    platform: state
+    entity_id: switch.pump
+    from: 'off'
+    to: 'on'
+    state: 'on'
+    for:
+      seconds: 30
+  condition:
+    condition: state
+    entity_id: switch.pump
+    state: 'on'
+  action:
+    service: 'switch.turn_off'
+    entity_id: switch.pump
+
+- alias: garden pump on
+  trigger:
+    platform: time
+    minutes: 1
+  condition:
+    condition: state
+    entity_id: switch.pump
+    state: 'off'
+    for:
+      seconds: 30
+  action:
+    service: 'switch.turn_on'
+    entity_id: switch.pump
+
+- alias: check garden pump off
+  trigger:
+    platform: state
+    entity_id: switch.pump
+    state: 'on'
+    for:
+      seconds: 300
+  action:
+    service: 'switch.turn_off'
+    entity_id: switch.pump

@@ -1,0 +1,29 @@
+- platform: command_line
+  switches:
+    common_power:
+      command_on: "sispmctl -d 0 -o 4"
+      command_off: "sispmctl -d 0 -f 4"
+      command_state: "sispmctl -d 0 -m 4 | tail -c 4 | sed 's/^ *//;s/ *$//'"
+      value_template: '{{ "on" == value }}'
+      friendly_name: Common power
+
+    garden_light:
+      command_on: "sispmctl -d 0 -o 2"
+      command_off: "sispmctl -d 0 -f 2"
+      command_state: "sispmctl -d 0 -m 2 | tail -c 4 | sed 's/^ *//;s/ *$//'"
+      value_template: '{{ "on" == value }}'
+      friendly_name: Light
+    
+    garden_pump:
+      command_on: "sispmctl -d 0 -o 1"
+      command_off: "sispmctl -d 0 -f 1"
+      command_state: "sispmctl -d 0 -m 1 | tail -c 4 | sed 's/^ *//;s/ *$//'"
+      value_template: '{{ "on" == value }}'
+      friendly_name: Pump
+
+    garden_fan:
+      command_on: "sispmctl -d 0 -o 3"
+      command_off: "sispmctl -d 0 -f 3"
+      command_state: "sispmctl -d 0 -m 3 | tail -c 3 | sed 's/^ *//;s/ *$//'"
+      value_template: '{{ "on" == value }}'
+      friendly_name: FAN

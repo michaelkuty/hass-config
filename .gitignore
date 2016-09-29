@@ -1,0 +1,12 @@
+
+._*
+
+deps/*
+home-assistant.db
+home-assistant_v2.db
+home-assistant.log
+known_devices.yaml
+html5_push_registrations.conf
+.HA_VERSION
+
+secrets.yaml
