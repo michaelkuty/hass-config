@@ -35,6 +35,7 @@ Automation Overrides:
 - automation.garden_fan_off
 - automation.check_garden_pump_on
 - automation.check_garden_pump_off
+- automation.garden_water_refill
 
 Adjusting:
 - input_slider.time_lamp_on_hour

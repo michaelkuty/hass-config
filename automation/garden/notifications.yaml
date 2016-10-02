@@ -1,6 +1,6 @@
 
 
-- alias: garden pump off
+- alias: garden water refill
   trigger:
     platform: state
     entity_id: binary_sensor.garden_water
