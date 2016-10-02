@@ -1,0 +1,6 @@
+
+- platform: group
+  name: all
+  services:
+  - service: pushbullet
+  - service: kodi

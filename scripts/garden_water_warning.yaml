@@ -1,0 +1,17 @@
+
+sequence:
+- service: notify.kodi_notifier
+  data:
+    title: "Garden [WATER]"
+    message: "Please refill the water !"
+    data:
+      displaytime: 20000
+      icon: "warning"
+
+- service: notify.pushbullet
+  data:
+    title: "Garden [WATER]"
+    message: "Please refill the water !"
+    data:
+      displaytime: 20000
+      icon: "warning"

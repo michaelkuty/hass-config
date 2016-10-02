@@ -1,0 +1,5 @@
+
+- platform: kodi
+  name: kodi notifier
+  host: http://10.0.0.7
+  port: 8080

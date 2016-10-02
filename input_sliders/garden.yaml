@@ -7,7 +7,7 @@ garden_pump_interval:
   icon: mdi:fan
 time_lamp_on_hour:
   name: Lamp ON(hour)
-  initial: 6
+  initial: 7
   min: 0
   max: 23
   step: 1

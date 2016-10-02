@@ -1,0 +1,13 @@
+
+
+- alias: garden pump off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.garden_water
+    to: 'off'
+    from: 'on'
+    # for:
+    #   seconds: 30
+  action: 
+    service: 'script.turn_on'
+    entity_id: script.garden_water_warning
