@@ -3,5 +3,6 @@
   ports:
     24: Garden Soil Humidity
     21: Garden Light
+    20: Garden Water
   pull_mode: "DOWN"
   invert_logic: true

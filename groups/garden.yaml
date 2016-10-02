@@ -8,6 +8,7 @@ garden:
     - sensor.time_lamp_off
     - binary_sensor.garden_soil_humidity
     - binary_sensor.garden_light
+    - binary_sensor.garden_water
     - camera.garden
     - group.garden_state
     - group.garden_switches
@@ -25,11 +26,15 @@ Garden Switches:
 
 Automation Overrides:
 - automation.check_garden_light_on
-- automation.garden_on
-- automation.garden_off
+- automation.check_garden_light_off
+- automation.garden_light_on
+- automation.garden_light_off
 - automation.garden_pump_off
 - automation.garden_pump_on
+- automation.garden_fan_on
+- automation.garden_fan_off
 - automation.check_garden_pump_on
+- automation.check_garden_pump_off
 
 Adjusting:
 - input_slider.time_lamp_on_hour

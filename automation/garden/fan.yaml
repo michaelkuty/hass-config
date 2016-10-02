@@ -1,0 +1,22 @@
+
+# just connect fan to state of light
+
+- alias: garden fan on
+  trigger:
+    platform: state
+    entity_id: switch.light
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fan
+
+- alias: garden fan off
+  trigger:
+    platform: state
+    entity_id: switch.light
+    from: 'on'
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.fan

@@ -1,0 +1,52 @@
+
+- alias: garden light on
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_on.state }}'
+  action:
+    service: switch.turn_on
+    entity_id: switch.light
+
+- alias: garden light off
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_on.state }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.light
+
+- alias: check garden light on
+  trigger:
+    platform: time
+    minutes: "/2"
+  action:
+    service: 'switch.turn_on'
+    entity_id: 'switch.light'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light
+        state: 'off'
+      - condition: template
+        value_template: '{{ states.sensor.time.state > states.sensor.time_lamp_on.state }}'
+      - condition: template
+        value_template: '{{ states.sensor.time.state < states.sensor.time_lamp_off.state }}'
+
+- alias: check garden light off
+  trigger:
+    platform: time
+    minutes: "/2"
+  action:
+    service: 'switch.turn_off'
+    entity_id: 'switch.light'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light
+        state: 'on'
+      - condition: template
+        value_template: '{{ states.sensor.time.state > states.sensor.time_lamp_off.state }}'
+      - condition: template
+        value_template: '{{ states.sensor.time.state < states.sensor.time_lamp_on.state }}'
