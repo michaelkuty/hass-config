@@ -10,7 +10,7 @@
 - alias: garden light off
   trigger:
     platform: template
-    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_on.state }}'
+    value_template: '{{ states.sensor.time.state == states.sensor.time_lamp_off.state }}'
   action:
     service: switch.turn_off
     entity_id: switch.light
